@@ -4,8 +4,7 @@ $(function(){
         url : "/xingoo/classes",
         data : {pagkage:$('#packageName').val()},
         async : false,
-        success : function(result){
-            var data = result.data;
+        success : function(data){
             var html = "";
 
             for (var key in data){
@@ -20,8 +19,7 @@ $(function(){
                 url : "/xingoo/methods",
                 data : {clazz:$('#dubboInterface').val()},
                 async : false,
-                success : function(result){
-                    var data = result.data;
+                success : function(data){
                     var html = "";
 
                     for (var key in data){
@@ -38,9 +36,7 @@ $(function(){
     $("#dubboInterface").change(function(){
         $.post("/xingoo/methods",
             {clazz:$('#dubboInterface').val()},
-            function(result){
-
-                var data = result.data;
+            function(data){
                 var html = "";
 
                 for (var key in data){
@@ -62,8 +58,7 @@ $(function(){
                 params:$('#dubboParams').val(),
                 types:$("#dubboMethod option:selected").attr("param")
             },
-            function(result){
-                var data = result.data;
+            function(data){
                 $('#dubbo_table').html(data);
             }
         );

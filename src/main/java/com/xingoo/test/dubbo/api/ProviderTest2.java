@@ -1,9 +1,10 @@
-package com.xingoo.test.dubbo;
+package com.xingoo.test.dubbo.api;
 
+import com.xingoo.test.dubbo.ITest2;
 import org.springframework.stereotype.Service;
 
 @Service("ProviderTest2")
-public class ProviderTest2 implements ITest2{
+public class ProviderTest2 implements ITest2 {
 
     @Override
     public String test3(){
