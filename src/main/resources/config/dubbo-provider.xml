@@ -8,7 +8,7 @@
 
     <dubbo:application name="dubbo-http-test" owner="xinghailong" organization="dubbo-http-provider"/>
 
-    <dubbo:registry address="zookeeper://10.10.5.238:2181?backup=10.10.5.238:2181"/>
+    <dubbo:registry address="zookeeper://localhost:2181?backup=localhost:2181"/>
 
     <dubbo:monitor protocol="registry"/>
 

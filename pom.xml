@@ -10,43 +10,14 @@
     <name>dubbo-http-test</name>
     <description>dubbo http测试</description>
 
-    <build>
-        <finalName>dubbo-http-test</finalName>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-
     <properties>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-
-        <spring-boot-starter-mybatis.version>1.1.1</spring-boot-starter-mybatis.version>
         <zookeeper.version>3.4.8</zookeeper.version>
         <zkclient.version>0.1</zkclient.version>
 
-
-        <tiangou-zipkin-brave.version>1.1-SNAPSHOT</tiangou-zipkin-brave.version>
     </properties>
 
     <dependencies>
@@ -59,25 +30,10 @@
             <type>pom</type>
             <scope>import</scope>
         </dependency>
-
         <dependency>
-            <groupId>com.tg.standford</groupId>
-            <artifactId>core</artifactId>
-            <version>1.0.0-SNAPSHOT</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>log4j</groupId>
-                    <artifactId>log4j</artifactId>
-                </exclusion>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-log4j12</artifactId>
-                </exclusion>
-                <exclusion>
-                    <artifactId>guava</artifactId>
-                    <groupId>com.google.guava</groupId>
-                </exclusion>
-            </exclusions>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8</version>
         </dependency>
 
         <dependency>
@@ -87,9 +43,9 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-jdbc</artifactId>
-            <version>1.5.4.RELEASE</version>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-framework</artifactId>
+            <version>2.12.0</version>
         </dependency>
 
         <dependency>
@@ -104,7 +60,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <version>1.5.4.RELEASE</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- dubbo引入还需要引入zookeeper的包 -->
@@ -124,7 +79,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>
-            <version>2.8.5-SNAPSHOT</version>
+            <version>2.6.2</version>
             <exclusions>
                 <exclusion>
                     <artifactId>spring-beans</artifactId>
@@ -163,5 +118,30 @@
 
     </dependencies>
 
+
+    <build>
+        <finalName>dubbo-http-test</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>

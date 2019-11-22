@@ -2,7 +2,7 @@ package com.xingoo.test.controller;
 
 import com.xingoo.test.utils.DubboApiUtils;
 import com.xingoo.test.utils.SpringUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
